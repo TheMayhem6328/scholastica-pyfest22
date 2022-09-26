@@ -36,14 +36,14 @@ What can you deduce about the format of the ID? Hence, how will this be benefici
 
 ## Checklist
 
-- [ ] Input IDs, validate and arrange input as ascending array
+- [x] Input IDs, validate and arrange input as ascending array
   - [x] Make constant for student count
   - [x] Take ID numbers as input
   - [x] Validate ID input (both `XXXXXXXXXX` and `XXXX-XX-XXXX` work)
-  - [ ] Disallow duplicate ID input
+  - [x] Disallow duplicate ID input
   - [x] Omit IDs matching format `XXXX-00-XXXX`
   - [x] Dump inputs to an array
-  - [ ] Sort array as ascending
+  - [x] Sort array as ascending
 - [ ] Generate email
   - [ ] Append `@scholastica.online` to each element of ID array
 - [ ] Generate password
