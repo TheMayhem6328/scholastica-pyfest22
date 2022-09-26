@@ -15,12 +15,14 @@ counter = 0 # Counter init
 
 ### Input
 id_list = [] # Init list to store student IDs
+mail_list = []  # Init list to store student mails
 
 ### Loop n(Student) times
 while counter < student_count:
 
     ## Init basic stuff
     flag = False # Flag init
+
     temp = input("Enter student ID: ")
 
     ## Ensure input matches desired format
@@ -57,16 +59,9 @@ while counter < student_count:
             ###### Email generation and verification start
 
             # Add to ID list (And append `@scholastica.online` to ID to form email)
+            id_list.append(temp)
             temp += "@scholastica.online"
-            id_list.append(temp) # Add `id_input` to set
-
-            # Infinite loop to keep asking user until user inputs right email
-            while True:
-                temp2 = input("Enter email: ")
-                if temp2 == temp:
-                    break
-                else:
-                    print("Input email did not match generated email\n(Hint: It's just the ID without hyphens, suffixed with '@scholastica.onine')")
+            mail_list.append(temp) # Add `id_input` to set
 
             ###### Email generation and verification end
 
@@ -83,8 +78,17 @@ while counter < student_count:
         print("Wrong format - it must be only numbers and hyphens and must match format 'XXXX-XX-XXXX' or 'XXXXXXXXXX'")
 
 ### Sort (in ascending order)
+mail_list.sort()
 id_list.sort()
 
 ###### Input, validation, collection and organisation end
 
-print(id_list)
+print(mail_list)
+
+while True:
+    temp2 = input("Enter email: ")
+    check=scannarr(mail_list,temp2)
+    if check==1:
+        break
+    else:
+        print("Input email did not match generated email\n(Hint: It's just the ID without hyphens, suffixed with '@scholastica.onine')")
