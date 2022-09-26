@@ -1,4 +1,11 @@
 ###### Init and import stuff
+def scannarr(lst,srchtrm):
+    boolean=0
+    for i in range(len(lst)):
+        if lst[i]==srchtrm:
+            boolean=1
+            break
+    return boolean
 import re # Import regex library
 student_count = 5 # Assuming 5 for simplicity
 counter = 0 # Counter init
@@ -39,9 +46,7 @@ while counter < student_count:
             flag2 = 0 # Will be more than 0 if duplicate found
 
             # Compare each element of ID list with ID input
-            for x in id_list:
-                if x == temp:
-                    flag2 += 1
+            flag2=scannarr(id_list,temp)
 
             # Repeat loop (without appending list or incrementing counter)
             if flag2 > 0:
