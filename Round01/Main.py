@@ -1,11 +1,11 @@
 ###### Init and import stuff
 import re         # Import regex library
 import random     # Import random num gen library
-student_count = 5 # Assuming 5 for simplicity
+student_count = 3 # Assuming 2 for simplicity
 counter = 0       # Counter init
 
-# Define function to search
-def search(lst,trm):
+# Define function to search (will be extensively used later)
+def search(lst: list,trm: str):
     """A function to see if a given list (lst) has a given term (trm)
 
     Args:
@@ -16,7 +16,7 @@ def search(lst,trm):
         Bool: True if match found - False if not found
     """
 
-    # Init 
+    # Init boolean
     boolean = False
     for i in range(len(lst)):
         if str(lst[i]) == trm:
@@ -24,11 +24,11 @@ def search(lst,trm):
             break
     return boolean
 
+
 ###### Input, validation, collection and organisation start
 
 ### Input
 id_list = [] # Init list to store student IDs
-mail_list = []  # Init list to store student mails
 
 ### Loop n(Student) times
 while counter < student_count:
@@ -57,23 +57,25 @@ while counter < student_count:
         if not re.search("\d{4}[0]{2}\d{4}",temp): # If ID does `not` match format `XXXX00XXXX`
 
             # Duplicate check
-            flag2 = 0 # Will be more than 0 if duplicate found
-
-            # Compare each element of ID list with ID input
-            flag2=scannarr(id_list,temp)
-
-            # Repeat loop (without appending list or incrementing counter)
-            if flag2 > 0:
+            if search(id_list,temp):
                 print("Value exists")
                 continue
+            
+            id_list.append(temp)
             
 
             ###### Email generation and verification start
 
             # Add to ID list (And append `@scholastica.online` to ID to form email)
-            id_list.append(temp)
             temp += "@scholastica.online"
-            mail_list.append(temp) # Add `id_input` to set
+            id_list.append(temp) # Add `id_input` to set
+
+            while True:
+                temp2 = input("Enter email: ")
+                if search(id_list,temp2):
+                    break
+                else:
+                    print("Input email did not match generated email\n(Hint: It's just the ID without hyphens, suffixed with '@scholastica.onine')")
 
             ###### Email generation and verification end
 
@@ -90,10 +92,10 @@ while counter < student_count:
         print("Wrong format - it must be only numbers and hyphens and must match format 'XXXX-XX-XXXX' or 'XXXXXXXXXX'")
 
 ### Sort (in ascending order)
-mail_list.sort()
 id_list.sort()
 
 ###### Input, validation, collection and organisation end
+
 
 
 ###### Password generation start
@@ -105,53 +107,51 @@ pwd_list = []
 counter = 0
 
 ### Generate password for each email
-# while True:
-# 
-#     # Init temp list
-#     temp_list = []
-# 
-#     # Convenience variables for functions
-#     tla = temp_list.append
-#     rnr = random.randint
-# 
-#     # Generate 3 numbers and dump them to list 
-#     tla(str(rnr(0,9)))
-#     tla(str(rnr(0,9)))
-# 
-#     # Generate 2 ASCII nums (for `UPPERCASE`` letter), convert them to characters and dump them to list
-#     tla(chr(rnr(65,90)))
-#     tla(chr(rnr(65,90)))
-#     tla(chr(rnr(65,90)))
-#     
-#     # Generate 3 ASCII nums (for `lowercase`` letter), convert them to characters and dump them to list
-#     tla(chr(rnr(97,122)))
-#     tla(chr(rnr(97,122)))
-#     tla(chr(rnr(97,122)))
-# 
-#     # Ensure characters don't follow a pattern
-#     random.shuffle(temp_list)
-# 
-#     # Declare a utility variable
-#     temp = ""
-# 
-#     # Build a string
-#     for x in temp_list:
-#         temp += temp_list
-# 
-#     # Append built string to password list
-#     pwd_list.append(temp)
-# 
-# print(pwd_list)
+while counter != len(id_list):
 
-print(mail_list)
+    # Init temp list
+    temp_list = []
 
-while True:
-    temp2 = input("Enter email: ")
-    check=scannarr(mail_list,temp2)
-    if check==1:
-        break
-    else:
-        print("Input email did not match generated email\n(Hint: It's just the ID without hyphens, suffixed with '@scholastica.onine')")
+    # Convenience variables for functions
+    tla = temp_list.append
+    rnr = random.randint
 
+    # Generate 3 numbers and dump them to list 
+    tla(str(rnr(0,9)))
+    tla(str(rnr(0,9)))
+
+    # Generate 2 ASCII nums (for `UPPERCASE`` letter), convert them to characters and dump them to list
+    tla(chr(rnr(65,90)))
+    tla(chr(rnr(65,90)))
+    tla(chr(rnr(65,90)))
+    
+    # Generate 3 ASCII nums (for `lowercase`` letter), convert them to characters and dump them to list
+    tla(chr(rnr(97,122)))
+    tla(chr(rnr(97,122)))
+    tla(chr(rnr(97,122)))
+
+    # Ensure characters don't follow a pattern
+    random.shuffle(temp_list)
+
+    # Declare a utility variable
+    temp = ""
+
+    # Build a string
+    for x in temp_list:
+        temp += x
+
+    # Check if it's already in list
+    if search(pwd_list,temp):
+        continue
+
+    # Append built string to password list
+    pwd_list.append(temp)
+
+    # Increment counter
+    counter += 1
+
+print(pwd_list)
+
+print(id_list)
 
 ###### Password generation end

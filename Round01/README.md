@@ -47,17 +47,23 @@ What can you deduce about the format of the ID? Hence, how will this be benefici
 - [x] Generate email
   - [x] Append `@scholastica.online` to each element of ID array
   - [x] Take input of email and verify it against generated data (for each email)
-- [ ] Generate password
-  - [ ] Make unique
-  - [ ] Ensure password meets at least these criteria:
-    - [ ] Alphanumeric
-    - [ ] 8 characters long
-    - [ ] 1 uppercase letter
-    - [ ] 3 lowercase letters
-    - [ ] 2 digits / numbers
+- [x] Generate password
+  - [x] Make unique
+  - [x] Ensure password meets at least these criteria:
+    - [x] Alphanumeric
+    - [x] 8 characters long
+    - [x] 1 uppercase letter
+    - [x] 3 lowercase letters
+    - [x] 2 digits / numbers
 - [ ] Generate yet another password ("2FA Code")
   - [ ] Ensure it's only a 6-digit number
 - [ ] Output them in a clean manner
   - [ ] (TBA)
 - [ ] Convert the entire process into a procedure (function with no `return` basically)
 - [ ] (Complete checklist)
+
+## Known Bugs
+
+- `XXXX00XXXX` inputs can be duplicated
+- Email validation can be done by entering some other email present in list too (e.g `ID=2015040006` `EMAIL=2013060031@scholastica.online` works)
+- Both IDs and emails are dumped into same list (thank you @Taz2040 -_-)
