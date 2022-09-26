@@ -4,11 +4,31 @@ import random     # Import random num gen library
 student_count = 5 # Assuming 5 for simplicity
 counter = 0       # Counter init
 
+# Define function to search
+def search(lst,trm):
+    """A function to see if a given list (lst) has a given term (trm)
+
+    Args:
+        lst (list): The list to search `trm` in
+        trm (str): The term to search in the list
+
+    Returns:
+        Bool: True if match found - False if not found
+    """
+
+    # Init 
+    boolean = False
+    for i in range(len(lst)):
+        if str(lst[i]) == trm:
+            boolean = True
+            break
+    return boolean
 
 ###### Input, validation, collection and organisation start
 
 ### Input
 id_list = [] # Init list to store student IDs
+mail_list = []  # Init list to store student mails
 
 ### Loop n(Student) times
 while counter < student_count:
@@ -40,9 +60,7 @@ while counter < student_count:
             flag2 = 0 # Will be more than 0 if duplicate found
 
             # Compare each element of ID list with ID input
-            for x in id_list:
-                if x == temp:
-                    flag2 += 1
+            flag2=scannarr(id_list,temp)
 
             # Repeat loop (without appending list or incrementing counter)
             if flag2 > 0:
@@ -53,16 +71,9 @@ while counter < student_count:
             ###### Email generation and verification start
 
             # Add to ID list (And append `@scholastica.online` to ID to form email)
+            id_list.append(temp)
             temp += "@scholastica.online"
-            id_list.append(temp) # Add `id_input` to set
-
-            # Infinite loop to keep asking user until user inputs right email
-            while True:
-                temp2 = input("Enter email: ")
-                if temp2 == temp:
-                    break
-                else:
-                    print("Input email did not match generated email\n(Hint: It's just the ID without hyphens, suffixed with '@scholastica.onine')")
+            mail_list.append(temp) # Add `id_input` to set
 
             ###### Email generation and verification end
 
@@ -79,6 +90,7 @@ while counter < student_count:
         print("Wrong format - it must be only numbers and hyphens and must match format 'XXXX-XX-XXXX' or 'XXXXXXXXXX'")
 
 ### Sort (in ascending order)
+mail_list.sort()
 id_list.sort()
 
 ###### Input, validation, collection and organisation end
@@ -131,6 +143,15 @@ counter = 0
 # 
 # print(pwd_list)
 
-print(id_list)
+print(mail_list)
+
+while True:
+    temp2 = input("Enter email: ")
+    check=scannarr(mail_list,temp2)
+    if check==1:
+        break
+    else:
+        print("Input email did not match generated email\n(Hint: It's just the ID without hyphens, suffixed with '@scholastica.onine')")
+
 
 ###### Password generation end
