@@ -1,25 +1,23 @@
 # Round 1 - CRISIS
 
-
 ## Scenario
 
 Scholastica Uttara’s email database has been accidentally deleted due to a software failure. It is required to be restored as soon as possible. However, due to the software failure, the remote database cannot be accessed directly and hence the application cannot be used to input or output any sort of data. to revert this crisis, the use of a python program is suggested by the authority.
 
-
 ## Primary Objectives - Official
+
 1. Declare constants to make a **reasonable estimate of the total number** of students in the school
 2. Take the inputs of the ID numbers of the estimated amount of students
 3. Form the email in the format
-	- First Half: ID number
-	- Second Half : "@scholastica.online"
-	- E.g. "2014070017@scholastica.online"
+     - First Half: ID number
+     - Second Half : "@scholastica.online"
+     - E.g. "2014070017@scholastica.online"
 4. Generate a **random** password for every email (does _not_ need to be unique for every email)
 5. The password must be **at least 8 characters** long
 6. Display the emails and their corresponding password
 7. Validate the inputs
 8. Take an input of the email and check whether the entry matches with the email formed
 9. Make the entire program run in a **continuous loop** which ends on command
-
 
 ## Bonus Objectives - Official
 
@@ -35,7 +33,6 @@ Scholastica Uttara’s email database has been accidentally deleted due to a sof
 8. Each email must be given an unique 6 digit numeric two-factor authentication code
 9. Be converted to a reusable procedure 
 
-
 ## Bonus Question
 
 > This question is to be answered in the Google Doc
@@ -45,6 +42,7 @@ Another masking algorithm is used to convert all numeric values to "#"s, alphabe
 What can you deduce about the format of the ID? Hence, how will this be beneficial for the school?
 
 ## Submission Instructions
+
 - You have to solve the program and copy paste the entire program into a doc file OR upload the python file directly. (The latter is more preferred)
 - You have to solve the program in your IDLE/Interpreter and compile them into the same doc file.  
 (You must reduce the number of iterations for this task)
