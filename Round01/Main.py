@@ -1,3 +1,6 @@
+"mail list is needed cuz ur appending the id and mail both to id list in line 64 and 71 of ur original code"
+
+
 ###### Init and import stuff
 import re         # Import regex library
 import random     # Import random num gen library
@@ -5,7 +8,8 @@ student_count = 3 # Assuming 2 for simplicity
 counter = 0       # Counter init
 
 # Define function to search (will be extensively used later)
-def search(lst: list,trm: str):
+"trm type can't be declared to str as trm needs to be int while checking 2fa"
+def search(lst: list,trm):
     """A function to see if a given list (lst) has a given term (trm)
 
     Args:
@@ -19,7 +23,7 @@ def search(lst: list,trm: str):
     # Init boolean
     boolean = False
     for i in range(len(lst)):
-        if str(lst[i]) == trm:
+        if str(lst[i]) == str(trm):
             boolean = True
             break
     return boolean
@@ -29,7 +33,7 @@ def search(lst: list,trm: str):
 
 ### Input
 id_list = [] # Init list to store student IDs
-
+mail_list = []
 ### Loop n(Student) times
 while counter < student_count:
 
@@ -68,7 +72,7 @@ while counter < student_count:
 
             # Add to ID list (And append `@scholastica.online` to ID to form email)
             temp += "@scholastica.online"
-            id_list.append(temp) # Add `id_input` to set
+            mail_list.append(temp) # Add `id_input` to set
 
             while True:
                 temp2 = input("Enter email: ")
@@ -92,7 +96,7 @@ while counter < student_count:
         print("Wrong format - it must be only numbers and hyphens and must match format 'XXXX-XX-XXXX' or 'XXXXXXXXXX'")
 
 ### Sort (in ascending order)
-id_list.sort()
+mail_list.sort()
 
 ###### Input, validation, collection and organisation end
 
@@ -107,7 +111,7 @@ pwd_list = []
 counter = 0
 
 ### Generate password for each email
-while counter != len(id_list):
+while counter != len(mail_list):
 
     # Init temp list
     temp_list = []
@@ -116,7 +120,7 @@ while counter != len(id_list):
     tla = temp_list.append
     rnr = random.randint
 
-    # Generate 3 numbers and dump them to list 
+    # Generate 2 numbers and dump them to list 
     tla(str(rnr(0,9)))
     tla(str(rnr(0,9)))
 
@@ -152,6 +156,6 @@ while counter != len(id_list):
 
 print(pwd_list)
 
-print(id_list)
+print(mail_list)
 
 ###### Password generation end
