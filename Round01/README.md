@@ -44,8 +44,9 @@ What can you deduce about the format of the ID? Hence, how will this be benefici
   - [x] Omit IDs matching format `XXXX-00-XXXX`
   - [x] Dump inputs to an array
   - [x] Sort array as ascending
-- [ ] Generate email
-  - [ ] Append `@scholastica.online` to each element of ID array
+- [x] Generate email
+  - [x] Append `@scholastica.online` to each element of ID array
+  - [x] Take input of email and verify it against generated data (for each email)
 - [ ] Generate password
   - [ ] Make unique
   - [ ] Ensure password meets at least these criteria:

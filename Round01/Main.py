@@ -1,7 +1,10 @@
-### Init and import stuff
+###### Init and import stuff
 import re # Import regex library
 student_count = 5 # Assuming 5 for simplicity
 counter = 0 # Counter init
+
+
+###### Input, validation, collection and organisation start
 
 ### Input
 id_list = [] # Init list to store student IDs
@@ -14,7 +17,7 @@ while counter < student_count:
     temp = input("Enter student ID: ")
 
     ## Ensure input matches desired format
-    if (re.search("\d{4}[-]{1}\d{2}[-]{1}\d{4}", temp)): # If input matches format `XXXX-XX-XXXX` (X being number)
+    if re.search("\d{4}[-]{1}\d{2}[-]{1}\d{4}", temp): # If input matches format `XXXX-XX-XXXX` (X being number)
         if len(temp) == 12: # If length of input is 12
             flag = True
     if re.search("\d{10}", temp): # If input matches format `XXXXXXXXXX` (X being number)
@@ -45,15 +48,38 @@ while counter < student_count:
                 print("Value exists")
                 continue
             
-            # Add to ID list
+
+            ###### Email generation and verification start
+
+            # Add to ID list (And append `@scholastica.online` to ID to form email)
+            temp += "@scholastica.online"
             id_list.append(temp) # Add `id_input` to set
+
+            # Infinite loop to keep asking user until user inputs right email
+            while True:
+                temp2 = input("Enter email: ")
+                if temp2 == temp:
+                    break
+                else:
+                    print("Input email did not match generated email\n(Hint: It's just the ID without hyphens, suffixed with '@scholastica.onine')")
+
+            ###### Email generation and verification end
+
+
+        # Let user know that the ID was skipped
+        else:
+            print("Format matches Mirpur ID - skipping...")
         
         # Increment counter
         counter += 1
+        print("") # For output formatting reasons - serves no real purpose
 
     else:
         print("Wrong format - it must be only numbers and hyphens and must match format 'XXXX-XX-XXXX' or 'XXXXXXXXXX'")
 
-### Sort (in ascending order) and output the list
+### Sort (in ascending order)
 id_list.sort()
+
+###### Input, validation, collection and organisation end
+
 print(id_list)
