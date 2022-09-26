@@ -3,5 +3,3 @@ def add(x,y):
   return z
 
 print(add(1,2))
-#yoo
-# Remove
