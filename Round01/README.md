@@ -64,6 +64,5 @@ What can you deduce about the format of the ID? Hence, how will this be benefici
 
 ## Known Bugs
 
-- `XXXX00XXXX` inputs can be duplicated
 - Email validation can be done by entering some other email present in list too (e.g `ID=2015040006` `EMAIL=2013060031@scholastica.online` works)
 - Both IDs and emails are dumped into same list (thank you @Taz2040 -_-)

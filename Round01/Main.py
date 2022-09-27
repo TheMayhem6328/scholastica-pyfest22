@@ -42,11 +42,13 @@ while counter < student_count:
     temp = input("Enter student ID: ")
 
     ## Ensure input matches desired format
-    if re.search("\d{4}[-]{1}\d{2}[-]{1}\d{4}", temp): # If input matches format `XXXX-XX-XXXX` (X being number)
-        if len(temp) == 12: # If length of input is 12
+    if re.search("20[0-2]\d{1}[-]\d{2}[-]\d{4}", temp): # If input matches format `XXXX-XX-XXXX` (X being number)
+        if len(temp) == 12 and int(temp[0:4]) >= 2000 and int(temp[0:4]) <= 2022: 
+            # If length of input is 12 and the first 4 digit is within 2000 and 2022
             flag = True
     if re.search("\d{10}", temp): # If input matches format `XXXXXXXXXX` (X being number)
-        if len(temp) == 10: # If length of input is 10
+        if len(temp) == 10 and int(temp[0:4]) >= 2000 and int(temp[0:4]) <= 2022:
+            # If length of input is 10 and the first 4 digit is within 2000 and 2022
             flag = True
     # I did this nested loop because otherwise the ID could be larger than the desired size and still be valid
 
@@ -57,16 +59,17 @@ while counter < student_count:
         if re.search("\d{4}[-]{1}\d{2}[-]{1}\d{4}", temp):
             temp = re.sub("[-]","",temp) # `XXXX-XX-XXXX` => `XXXXXXXXXX`
 
+        # Duplicate check
+        if search(id_list,temp):
+            print("Value exists")
+            continue
+
+        # Append to ID list (yes - even `XXXX00XXX` ones so that they can't be duplicated either)
+        id_list.append(temp)
+
         # Don't append ID list if ID is in format `XXXX00XXXX` - but do increment counter
         if not re.search("\d{4}[0]{2}\d{4}",temp): # If ID does `not` match format `XXXX00XXXX`
 
-            # Duplicate check
-            if search(id_list,temp):
-                print("Value exists")
-                continue
-            
-            id_list.append(temp)
-            
 
             ###### Email generation and verification start
 
@@ -76,7 +79,7 @@ while counter < student_count:
 
             while True:
                 temp2 = input("Enter email: ")
-                if search(id_list,temp2):
+                if temp == temp2:
                     break
                 else:
                     print("Input email did not match generated email\n(Hint: It's just the ID without hyphens, suffixed with '@scholastica.onine')")
@@ -154,8 +157,7 @@ while counter != len(mail_list):
     # Increment counter
     counter += 1
 
-print(pwd_list)
+###### Password generation end
 
 print(mail_list)
-
-###### Password generation end
+print(pwd_list)
