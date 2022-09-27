@@ -159,5 +159,38 @@ while counter != len(mail_list):
 
 ###### Password generation end
 
-print(mail_list)
-print(pwd_list)
+
+###### 2FA generation start
+
+### Declare a new list to store passwords in
+tfa_list = []
+
+### Re-initialise counter
+counter = 0
+
+### Generate password for each email
+while counter != len(mail_list):
+
+    # Generate random number between 100000 and 999999
+    temp = str(random.randint(100000,999999))
+
+    # Check if it's already in list
+    if search(tfa_list,temp):
+        continue
+
+    # Otherwise append to password list and increment counter
+    else:
+        tfa_list.append(temp)
+        counter += 1
+
+###### 2FA generation end
+
+
+###### Fancy output start
+
+print("         Mail                 |   Pwd    |  OTP  ")
+print("=================================================")
+for i in range(len(mail_list)):
+    print(mail_list[i],"|",pwd_list[i],"|",tfa_list[i])
+
+###### Fancy output end
