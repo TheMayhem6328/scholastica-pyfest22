@@ -55,14 +55,11 @@ What can you deduce about the format of the ID? Hence, how will this be benefici
     - [x] 1 uppercase letter
     - [x] 3 lowercase letters
     - [x] 2 digits / numbers
-- [ ] Generate yet another password ("2FA Code")
-  - [ ] Ensure it's only a 6-digit number
-- [ ] Output them in a clean manner
-  - [ ] (TBA)
-- [ ] Convert the entire process into a procedure (function with no `return` basically)
-- [ ] (Complete checklist)
+- [x] Generate yet another password ("2FA Code")
+  - [x] Ensure it's only a 6-digit number
+- [x] Output them in a clean manner
+- [x] Convert the entire process into a procedure (function with no `return` basically)
 
 ## Known Bugs
 
-- Email validation can be done by entering some other email present in list too (e.g `ID=2015040006` `EMAIL=2013060031@scholastica.online` works)
-- Both IDs and emails are dumped into same list (thank you @Taz2040 -_-)
+- None known as of writing 🥳
