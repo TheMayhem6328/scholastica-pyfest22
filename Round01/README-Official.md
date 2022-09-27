@@ -31,7 +31,7 @@ Scholastica Uttara’s email database has been accidentally deleted due to a sof
 6. The ID numbers containing a "00" after the year of registration - e.g. `2017-00-0024` - must be omitted as they are students of SRM
 7. The passwords of the omitted ID numbers should also be deleted (?)
 8. Each email must be given an unique 6 digit numeric two-factor authentication code
-9. Be converted to a reusable procedure 
+9. Be converted to a reusable procedure
 
 ## Bonus Question
 

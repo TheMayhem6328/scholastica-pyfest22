@@ -214,6 +214,22 @@ def studentMail(student_count = 5):
 
 ###### Master procedure end
 
-
-
-studentMail()
+flag = True
+while flag:
+    x = input("How many times do you want to take input? ")
+    try:
+        x = int(x)
+    except:
+        print("Sorry - number only")
+        continue
+    studentMail(x)
+    print("\n")
+    while True:
+        x = input("Do you want to generate another set? (Y or N): ")
+        if x == "Y":
+            break
+        if x == "N":
+            flag = False
+            break
+        else:
+            print("`Y` or `N` only please")
