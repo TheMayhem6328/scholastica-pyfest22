@@ -214,22 +214,43 @@ def studentMail(student_count = 5):
 
 ###### Master procedure end
 
-flag = True
+
+###### Setup input loop
+
+flag = True # Init flag
+# Whenever the user wants to stop, just set `flag` to False - this should invalidate this while loop and therefore terminate
 while flag:
+
+    # Take input
     x = input("How many times do you want to take input? ")
+
+    # Try converting `x` to an integer
     try:
         x = int(x)
+    # If that fails, handle that exception
     except:
         print("Sorry - number only")
         continue
+
+    # Run the procedure we made earlier
     studentMail(x)
-    print("\n")
+
+    ## Ask user whether they want to generate another set of credential data
+    print("\n") # For formatting reasons
+
+    # Nest a loop - code here keeps taking input until user inputs a predefined character (Y or N)
     while True:
+        # Ask input
         x = input("Do you want to generate another set? (Y or N): ")
+
+        # Get out of this loop only if input is `Y` or `N`
         if x == "Y":
             break
         if x == "N":
+            # Since the user doesn't want to repeat - set the flag to `False` so that root loop stops too
             flag = False
             break
+
+        # If the user inputs something other than `Y` or `N`, bug him about it
         else:
             print("`Y` or `N` only please")
