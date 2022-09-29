@@ -16,7 +16,7 @@ You will not be marked on whether your entire code runs or not. Instead, you'll 
 
 ## CODE EXPLAINED: Caesar Cipher Algorithm
 
-1. It defines a procedure `cipher()` to takes and parameter which specifies the number of messages needed to be encrypted OR decrypted.
+1. It defines a procedure `cipher()` to takes a parameter which specifies the number of messages needed to be encrypted OR decrypted.
 
 2. Before calling upon the procedure, a unique key is generated.
 If the unique key matches with the key input, the user is allowed to enter the program.
