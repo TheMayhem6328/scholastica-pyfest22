@@ -14,7 +14,7 @@ def cipher(arg = 5):
         count = count + 1
         print(f"Tries remaining: {count}")
         validatorkey = input("Please enter the correct unique key to continue: ")
-        if count < 0
+        if count < 0:
             print("ACCESS DENIED")
             exit()
     flag = flag
@@ -22,7 +22,7 @@ def cipher(arg = 5):
         for k in range(num):
             if choose == "E":
                 unencrypted = input("Enter message to be encrypted: ")
-                for i in unencrypted[i]
+                for i in unencrypted[i]:
                     encrypted_character = chr(i) + 5
                     encrypted_character = ord(encrypted_character)
                     encrypted_message = encrypted_message + encrypted_character
@@ -32,8 +32,8 @@ def cipher(arg = 5):
                 encrypted_message.clear()
             if choose == "D":
                 decrypted = input("Enter encrypted message: ")
-                for i in decrypted[i]
-                    if not i.isnumeric()
+                for i in decrypted[i]:
+                    if not i.isnumeric():
                         decrypted_character = chr(i) + 5
                         decrypted_characcter = ord(decrypted_character)
                         decrypted_message = decrypted_message + decrypted_character
@@ -43,7 +43,7 @@ def cipher(arg = 5):
         exterminator = int(input("Do you wish to take more inputs?\n (1) Yes \n (2) No"))
         while exterminator != 1 or exterminator != 2:
             exterminator = int(input("Do you wish to take more inputs?\n 1 for Yes \n 2 for No"))
-        if exterminator = 2:
+        if exterminator == 2:
             flag = False
 
 choose = input("Do you want to (e)encrypt or (d)decrypt? ")
