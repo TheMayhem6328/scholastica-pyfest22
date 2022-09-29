@@ -1,4 +1,3 @@
 {
-    "python.linting.enabled": true,
-    "editor.tabSize": 4
+    "python.linting.enabled": true
 }

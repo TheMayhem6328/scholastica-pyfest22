@@ -13,7 +13,7 @@ def cipher(arg = 5):
         count = count - 1
         print(f"Tries remaining: {count}")
         validatorkey = input("Please enter the correct unique key to continue: ")
-        if count < 2:
+        if count < 2 and validatorkey != key:
             print("ACCESS DENIED")
             exit()
     flag = True
