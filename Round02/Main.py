@@ -1,4 +1,4 @@
-#DEBUG THE CODE - IspF.Round2 | N340x340u340K3403340W340t340z340s340i3407
+#DEBUG THE CODE
 
 import random
 import secrets
