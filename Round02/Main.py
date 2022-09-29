@@ -3,10 +3,10 @@
 import random
 import secrets
 import hashlib
-def cipher(arg = 1):
+def cipher(choose, key, arg = 1):
     global num1
     count = 5
-    num = str(random.randint(1,1000))
+    num = str(random.randint(100,999))
     encrypted_message = ""
     decrypted_message = ""
     validatorkey = input("Please enter your unique key to continue: ")
@@ -31,11 +31,11 @@ def cipher(arg = 1):
                 encrypted_message = ""
             if choose == "D" or choose == "d":
                 decrypted = input("Enter encrypted message: ")
-                for i in decrypted:
+                for i in decrypted.replace(decrypted[1:4],""):
                     decrypted_character = ord(i) - 5
                     decrypted_character = chr(decrypted_character)
                     decrypted_message = decrypted_message + decrypted_character
-                decrypted_message = ("".join(map(str, decrypted_message))).replace("./+","")
+                decrypted_message = ("".join(map(str, decrypted_message)))
                 print("Decrypted Message: ",decrypted_message)
                 decrypted_message = ""
         exterminator = int(input("Do you wish to take more inputs?\n (1) Yes \n (2) No \nYour response: "))
@@ -48,4 +48,4 @@ choose = input("Do you want to (e)encrypt or (d)decrypt? ")
 key = hashlib.sha256(secrets.token_urlsafe(32).encode())
 key = key.hexdigest()
 print("The unique key is: ",key)
-cipher()
+cipher(choose, key)
