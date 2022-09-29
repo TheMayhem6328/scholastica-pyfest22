@@ -3,8 +3,7 @@
 import random
 import secrets
 import hashlib
-def cipher(choose, key, arg = 1):
-    global num1
+def cipher(choose, key, arg = 5):
     count = 5
     num = str(random.randint(100,999))
     encrypted_message = ""
@@ -45,7 +44,8 @@ def cipher(choose, key, arg = 1):
             flag = False
 
 choose = input("Do you want to (e)encrypt or (d)decrypt? ")
+arg = int(input("How many messages do you want to enter? "))
 key = hashlib.sha256(secrets.token_urlsafe(32).encode())
 key = key.hexdigest()
 print("The unique key is: ",key)
-cipher(choose, key)
+cipher(choose, key, arg)
