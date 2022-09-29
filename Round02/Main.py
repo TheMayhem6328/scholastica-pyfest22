@@ -5,7 +5,7 @@ import secrets
 import hashlib
 def cipher(arg = 5):
     count = 5
-    def num(): return str(random.randint(1,1000))
+    num = str(random.randint(1,1000))
     encrypted_message = ""
     decrypted_message = ""
     validatorkey = input("Please enter your unique key to continue: ")
@@ -25,7 +25,7 @@ def cipher(arg = 5):
                     encrypted_character = ord(i) + 5
                     encrypted_character = chr(encrypted_character)
                     encrypted_message = encrypted_message + encrypted_character
-                encrypted_message = (num().join(map(str, encrypted_message)))
+                encrypted_message = (num.join(map(str, encrypted_message)))
                 print("Encrypted Message: ",encrypted_message)
                 encrypted_message = ""
             if choose == "D" or choose == "d":
