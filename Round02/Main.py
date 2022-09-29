@@ -4,6 +4,7 @@ import random
 import secrets
 import hashlib
 def cipher(choose, key, arg = 5):
+    global num1
     count = 5
     num = str(random.randint(100,999))
     encrypted_message = ""
@@ -34,7 +35,6 @@ def cipher(choose, key, arg = 5):
                     decrypted_character = ord(i) - 5
                     decrypted_character = chr(decrypted_character)
                     decrypted_message = decrypted_message + decrypted_character
-                decrypted_message = ("".join(map(str, decrypted_message)))
                 print("Decrypted Message: ",decrypted_message)
                 decrypted_message = ""
         exterminator = int(input("Do you wish to take more inputs?\n (1) Yes \n (2) No \nYour response: "))
