@@ -24,19 +24,17 @@ The user has 5 tries to input the correct key.
 
 3. If the correct key is entered, access is granted and the user can
 input any string. The elements of the string are
-converted to ascii values and the ascii values are incremented by
-five. The character in the updated ascii value replaces
+converted to ASCII values and the ASCII values are incremented by five. The character in the updated ASCII value replaces
 the original one. Knowledge of the functions `ord()` and `chr()` are
 required, so search it up if needed.
 
-4. The key is generated using the `secrets` library and the `hashlib`
-library. The `secrets` library generates a random output
+4. The key is generated using the `secrets` library and the `hashlib` library. The `secrets` library generates a random output
 for which the `hashlib` converts the output to hexadecimal.
 
-5. A random number is generated in the variable num, which is interpolated between every ENCRYPTED character.
+5. A random number is generated in the variable `num`, which is interpolated between every ENCRYPTED character.
 
 6. The random number MUST NOT BE THERE in the decrypted string
 
 ## Code preview
 
-![Code preview](CodePreview.jpeg)
+![In screenshot, the incrementer is `-5`, not 5. Don't try to compare](CodePreview.jpeg)
