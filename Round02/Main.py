@@ -3,8 +3,7 @@
 import random
 import secrets
 import hashlib
-def cipher(choose, key, arg = 5):
-    global num1
+def cipher(choose, key, arg):
     count = 5
     num = str(random.randint(100,999))
     encrypted_message = ""
@@ -31,15 +30,16 @@ def cipher(choose, key, arg = 5):
                 encrypted_message = ""
             if choose == "D" or choose == "d":
                 decrypted = input("Enter encrypted message: ")
-                for i in decrypted.replace(decrypted[1:4],""):
+                for i in decrypted:
                     decrypted_character = ord(i) - 5
                     decrypted_character = chr(decrypted_character)
                     decrypted_message = decrypted_message + decrypted_character
+                decrypted_message = decrypted_message.replace(decrypted_message[1:4],"")
                 print("Decrypted Message: ",decrypted_message)
                 decrypted_message = ""
-        exterminator = int(input("Do you want input you'r set of messages again?(in case you made a\n (1) Yes \n (2) No \nYour response: "))
+        exterminator = int(input("Do you want input your set of messages again? (In case you made a mistake)\n (1) Yes \n (2) No \nYour response: "))
         while exterminator != 1 and exterminator != 2:
-            exterminator = int(input("Do you want input you'r set of messages again?(in case you made a mistake)\n [1] for Yes \n [2] for No \nYour response: "))
+            exterminator = int(input("Do you want input your set of messages again? (in case you made a mistake)\n [1] for Yes \n [2] for No \nYour response: "))
         if exterminator == 2:
             flag = False
 
