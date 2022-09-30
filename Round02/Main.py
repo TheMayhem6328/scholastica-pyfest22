@@ -31,11 +31,10 @@ def cipher(choose, key, arg = 5):
                 encrypted_message = ""
             if choose == "D" or choose == "d":
                 decrypted = input("Enter encrypted message: ")
-                for i in decrypted:
+                for i in decrypted.replace(decrypted[1:4],""):
                     decrypted_character = ord(i) - 5
                     decrypted_character = chr(decrypted_character)
                     decrypted_message = decrypted_message + decrypted_character
-                    decrypted_message = i.replace(j[1:4],"")
                 print("Decrypted Message: ",decrypted_message)
                 decrypted_message = ""
         exterminator = int(input("Do you want input you'r set of messages again?(in case you made a\n (1) Yes \n (2) No \nYour response: "))
