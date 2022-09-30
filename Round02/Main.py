@@ -1,4 +1,4 @@
-#DEBUG THE CODE
+#DEBUGged THE CODE
 
 import random
 import secrets
