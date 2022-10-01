@@ -128,5 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Mayhem6328
+## Mayhem6328
+
 Scratch.py
+
+# Mac forks
+._*
