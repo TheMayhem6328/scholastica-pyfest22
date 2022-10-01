@@ -1,6 +1,6 @@
 # Round 2 - [Battle of The Champions](README-Official.md)
 
-We did a lot too much of work in this round in a short time to document it process-by-process in this README, but we can talk about some stuff regarding our debugging process. If you want to skip through the boring stuff and see what we changed, see this diff below:
+We did a lot too much of work in this round in a short time to document it process-by-process in this README, but we can talk about some stuff regarding our debugging process. If you want to skip through the boring stuff and see what we changed, see this diff below, or just view it [here](https://github.com/TheMayhem6328/scholastica-pyfest22/compare/fd1fb5d..c8fdb80?diff=split):
 
 ![Diff between buggy code (left) and fixed code (right)](DiffPreview.png)
 
