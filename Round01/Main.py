@@ -144,12 +144,12 @@ def studentMail(student_count = 5):
         tla(str(rnr(0,9)))
         tla(str(rnr(0,9)))
 
-        # Generate 2 ASCII nums (for `UPPERCASE`` letter), convert them to characters and dump them to list
+        # Generate 3 ASCII nums (for `UPPERCASE` letter), convert them to characters and dump them to list
         tla(chr(rnr(65,90)))
         tla(chr(rnr(65,90)))
         tla(chr(rnr(65,90)))
 
-        # Generate 3 ASCII nums (for `lowercase`` letter), convert them to characters and dump them to list
+        # Generate 3 ASCII nums (for `lowercase` letter), convert them to characters and dump them to list
         tla(chr(rnr(97,122)))
         tla(chr(rnr(97,122)))
         tla(chr(rnr(97,122)))
