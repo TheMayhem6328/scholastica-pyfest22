@@ -4,11 +4,18 @@
 
 This was a 6-day coding competition (25th September to 30th September - officially it was supposed to end at 29th) consisting at least 25 groups (duo-teams and individuals), spanning to two rounds. Those who at least completed Round 1 assignment are entitled to a certificate of participation, but only the best five groups would ascend to round 2. Fortunately, we _did_ make it to the second round as _**second**_ :
 
-![Round 01 leaderboard](Round1-Top5.png)
-
+![Round 01 Leaderboard](Round1-Top5.png)
 > If only we didn't forget to submit the answer to the bonus, we would be at the top. All of this is `TheMayhem6328`'s fault ;-;
 >
 > Quafshat if you see this, please share your code to [my email](mailto:2013060031@scholastica.online) - I (TheMayhem6328 - Zahir) am genuinely interested in learning how you made it to the top.
+
+Oh yeah right - **we won round 2** :D  
+
+![Round 02 Leaderboard](Round2-Leaderboard.jpg)
+
+(We were the ones in the center - beside our principal)
+
+![Round 02 Leaderboard](Round2-Win.jpg)
 
 Top three in Round 2 will get crests. Needless to say, we're aiming for the top :)
 
@@ -35,3 +42,8 @@ Took lead of how problems were solved. Did most of the code.
 ### Shabab Tasvirul Islam (Avro) - [Taz2040](https://github.com/Taz2040)
 
 Did heavy testing. Occasionally helped with code efficiency and simpler code parts.
+
+---
+---
+
+## Currently, [TheMayhem6328](https://github.com/TheMayhem6328) is working on a C++ port of the code (as a learning experience) - stay tuned for more :)
